@@ -1,0 +1,510 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/lenovo/ontologies/2025/3/sante-ontologie"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/lenovo/ontologies/2025/3/sante-ontologie">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="fr">this ontology is about healthcare</Literal>
+    </Annotation>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic</IRI>
+        <Literal xml:lang="fr">a pour diagnostic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#aPourPatient</IRI>
+        <Literal xml:lang="fr">Lie un acte médical au patient concerné</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#aPourPatient</IRI>
+        <Literal xml:lang="fr">a pour patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite</IRI>
+        <Literal xml:lang="fr">a pour specialite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#codeCIM</IRI>
+        <Literal xml:lang="fr">Code de classification internationale des maladies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#codeCIM</IRI>
+        <Literal xml:lang="fr">code CIM-10</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#dateActe</IRI>
+        <Literal xml:lang="fr">date de l&apos;acte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#dateNaissance</IRI>
+        <Literal xml:lang="fr">date de naissance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar</IRI>
+        <Literal xml:lang="fr">faire une preinscription</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#estRealisePar</IRI>
+        <Literal xml:lang="fr">est réalisé par</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#nom</IRI>
+        <Literal xml:lang="fr">nom de famille</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#prenom</IRI>
+        <Literal xml:lang="fr">prénom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#prescrit</IRI>
+        <Literal xml:lang="fr">prescrit</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

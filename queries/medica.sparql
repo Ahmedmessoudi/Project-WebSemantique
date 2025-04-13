@@ -1,0 +1,69 @@
+# REQUÊTES SPARQL POUR L'ONTOLOGIE DE SANTÉ
+# Fichier à déposer dans le dossier /queries/ de votre projet
+
+PREFIX : <http://www.sante.fr/ontologie#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+### 1. Liste des patients avec leurs dates de naissance (triés)
+SELECT ?patient ?nom ?prenom ?dateNaissance
+WHERE {
+  ?patient a :Patient ;
+           :nom ?nom ;
+           :prenom ?prenom ;
+           :dateNaissance ?dateNaissance .
+}
+ORDER BY ?dateNaissance
+
+### 2. Médecins et leurs établissements de travail
+SELECT ?medecin ?nomMedecin ?etablissement
+WHERE {
+  ?medecin a :Medecin ;
+           :nom ?nomMedecin ;
+           :travailleDans ?etablissement .
+  ?etablissement rdfs:label ?etablissement .
+}
+
+### 3. Diagnostics posés avec les médecins responsables
+SELECT ?patient ?diagnostic ?medecin ?dateActe
+WHERE {
+  ?acte a :Diagnostic ;
+        :aPourPatient ?patient ;
+        :estRealisePar ?medecin ;
+        :dateActe ?dateActe .
+  ?diagnostic :estDiagnostiquePar ?acte .
+  ?medecin :nom ?nomMedecin .
+}
+LIMIT 10
+
+### 4. Médicaments prescrits pour une pathologie spécifique (ex: diabète)
+SELECT ?medicament ?posologie
+WHERE {
+  ?pathologie :codeCIM "E11" ; # Code CIM pour diabète type 2
+              rdfs:label "Diabète"@fr .
+  ?traitement :pourPathologie ?pathologie ;
+              :utiliseMedicament ?medicament ;
+              :posologie ?posologie .
+}
+
+### 5. Patients avec prescriptions en retard (date dépassée)
+SELECT ?patient ?nom ?traitement ?dateFin
+WHERE {
+  ?patient a :Patient ;
+           :nom ?nom ;
+           :aPourTraitement ?traitement .
+  ?traitement :dateFin ?dateFin .
+  FILTER (?dateFin < NOW())
+}
+
+### 6. Statistiques par spécialité médicale (requête agrégative)
+SELECT ?specialite (COUNT(?medecin) AS ?nbMedecins) 
+WHERE {
+  ?medecin a :Medecin ;
+           :aPourSpecialite ?specialite .
+  ?specialite rdfs:label ?specialite .
+}
+GROUP BY ?specialite
+ORDER BY DESC(?nbMedecins)
