@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/lenovo/ontologies/2025/3/sante-ontologie">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -16,85 +17,172 @@
         <Literal xml:lang="fr">this ontology is about healthcare</Literal>
     </Annotation>
     <Declaration>
-        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
@@ -316,6 +404,884 @@
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#CabinetMedical"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourPatient"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+        <Literal>Cabine de Dr. Hicham Bakkali</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+        <Literal>Centre Médical Al Amal, Sfax</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Cabine_DrHicham"/>
+        <Literal>+216 71 22 33 66</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+        <Literal>Clinique_AlFarabi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+        <Literal>Boulevard  V, ariana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Clinique_AlFarabi"/>
+        <Literal>+216 70 62 73 00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+        <Literal>diagnostique grippe</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_grippe"/>
+        <Literal>affectation des medicaments legere pour 10 jous max</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <Literal>M003</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <Literal>1990-04-16</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <Literal>Bakkali</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
+        <Literal>Hicham</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <Literal>Femme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <Literal>M004</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <Literal>1995-10-12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <Literal>Radi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
+        <Literal>khadija</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <Literal>M001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <Literal>1990-05-12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <Literal>kechrida</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
+        <Literal xml:lang="fr">Med ali</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <Literal>M002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <Literal>1992-12-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <Literal>nguyen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#DrSophie"/>
+        <Literal>sophie</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <Literal>Examen IRM</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+        <Literal>Examen complet une fois</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <Literal>Hopital_IbnSina</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <Literal>Rue des Roses, Tunisie</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
+        <Literal>+216 77 33 44 55</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <Literal>Femme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <Literal>I002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <Literal>1995-07-08</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <Literal>garcia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <Literal>anna</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <Literal>Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <Literal>I001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <Literal>1990-01-12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <Literal>Benoit</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <Literal>luc</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal>Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal>P001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-04T09:30:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal>1982-06-14</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal>El Amrani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal>Youssef</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
+        <Literal>+216 23 61 46 78</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal>Femme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal>P002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-05T11:15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal>1990-03-22</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal>Benali</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal>Samira</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient2"/>
+        <Literal>+216 23 45 67 89</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal>Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal>P003</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-06T14:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal>1975-10-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal>Tazi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal>Mehdi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
+        <Literal>+216 24 56 78 91</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal>Femme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal>P004</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-07T16:45:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal>2000-12-12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal>Sebbar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal>Fatima</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient4"/>
+        <Literal>+216 54 67 89 12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal>Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal>P005</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-08T08:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal>1975-03-20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal>Karim</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal>Ahmed</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
+        <Literal>+216 92 55 66 88</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal>Femme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal>P006</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-09T10:30:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal>1995-11-10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal>martin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal>claire</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient6"/>
+        <Literal>+216 55 66 88 44</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal>Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal>P007</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateActe"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-10T13:15:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal>1980-05-09</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal>dupont</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal>jean</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
+        <Literal>+216 95 66 22 11</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+        <Literal>Tratement Antibiotique</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Antibiotique"/>
+        <Literal>3 fois par jours pour 15 jours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+        <Literal>traitement diabetique</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_Diabetique"/>
+        <Literal>des shots d&apos;insuline chaque jours jusqu&apos;a la visite prochaine</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+        <Literal>2 fois par jour pour 10 jours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <NamedIndividual IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement_paracetamol"/>
+        <Literal>Traitement paracetamol</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#estRealisePar"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -331,9 +1297,6 @@
     <SymmetricObjectProperty>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
-    </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#TravailleDans"/>
     </TransitiveObjectProperty>
@@ -399,12 +1362,38 @@
         <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prescrit"/>
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
     </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+    </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
     </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
@@ -417,6 +1406,26 @@
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
         <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#EtablissementSante"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#Nom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#adresse"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#codeCIM"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -427,7 +1436,11 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#dateNaissance"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#frequence"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#nom"/>
@@ -437,6 +1450,15 @@
         <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#prenom"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.co-ode.org/ontologies/ont.owl#telephone"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#Genre</IRI>
+        <Literal>genre</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://www.co-ode.org/ontologies/ont.owl#aPourDiagmostic</IRI>
@@ -456,6 +1478,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite</IRI>
         <Literal xml:lang="fr">a pour specialite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#adresse</IRI>
+        <Literal>Fonctionnelle (chaque hôpital a une seule adresse)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -484,8 +1511,18 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#esrPrescritPar</IRI>
+        <Literal>est prescrit par</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://www.co-ode.org/ontologies/ont.owl#estRealisePar</IRI>
-        <Literal xml:lang="fr">est réalisé par</Literal>
+        <Literal xml:lang="fr">est realise par</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#frequence</IRI>
+        <Literal>freaquence / description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -501,6 +1538,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://www.co-ode.org/ontologies/ont.owl#prescrit</IRI>
         <Literal xml:lang="fr">prescrit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.co-ode.org/ontologies/ont.owl#telephone</IRI>
+        <Literal>Fonctionnelle (en général, un établissement a un numéro principal)</Literal>
     </AnnotationAssertion>
 </Ontology>
 
