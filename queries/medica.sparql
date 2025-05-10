@@ -1,69 +1,94 @@
 # REQUÊTES SPARQL POUR L'ONTOLOGIE DE SANTÉ
 # Fichier à déposer dans le dossier /queries/ de votre projet
 
+# Définition des préfixes pour simplifier les URI
 PREFIX : <http://www.sante.fr/ontologie#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-### 1. Liste des patients avec leurs dates de naissance (triés)
-SELECT ?patient ?nom ?prenom ?dateNaissance
+# -------------------------------------------------------------------
+# Requête 1 : Liste des médecins avec leurs spécialités
+# But : Obtenir tous les médecins avec leurs noms, prénoms et spécialités
+# Utilité : Gestion du personnel médical, affectation des patients
+# -------------------------------------------------------------------
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
+SELECT ?medecin ?nom ?prenom ?specialite
 WHERE {
-  ?patient a :Patient ;
-           :nom ?nom ;
-           :prenom ?prenom ;
-           :dateNaissance ?dateNaissance .
-}
-ORDER BY ?dateNaissance
-
-### 2. Médecins et leurs établissements de travail
-SELECT ?medecin ?nomMedecin ?etablissement
-WHERE {
-  ?medecin a :Medecin ;
-           :nom ?nomMedecin ;
-           :travailleDans ?etablissement .
-  ?etablissement rdfs:label ?etablissement .
+    ?medecin a ont:Medecin ;             # Sélectionne les instances de Medecin
+             ont:nom ?nom ;              # Récupère le nom de famille
+             ont:prenom ?prenom ;        # Récupère le prénom
+             ont:aPourSpecialite ?specialite .  # Récupère la spécialité
+    ?specialite a ont:Pathologie .       # Vérifie que la spécialité est une Pathologie
 }
 
-### 3. Diagnostics posés avec les médecins responsables
-SELECT ?patient ?diagnostic ?medecin ?dateActe
+# -------------------------------------------------------------------
+# Requête 2 : Patients diagnostiqués COVID-19
+# But : Lister les patients avec diagnostic COVID-19 et date de diagnostic
+# Utilité : Suivi épidémiologique, gestion des cas critiques
+# -------------------------------------------------------------------
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
+SELECT ?patient ?nom ?prenom ?dateDiagnostic
 WHERE {
-  ?acte a :Diagnostic ;
-        :aPourPatient ?patient ;
-        :estRealisePar ?medecin ;
-        :dateActe ?dateActe .
-  ?diagnostic :estDiagnostiquePar ?acte .
-  ?medecin :nom ?nomMedecin .
-}
-LIMIT 10
-
-### 4. Médicaments prescrits pour une pathologie spécifique (ex: diabète)
-SELECT ?medicament ?posologie
-WHERE {
-  ?pathologie :codeCIM "E11" ; # Code CIM pour diabète type 2
-              rdfs:label "Diabète"@fr .
-  ?traitement :pourPathologie ?pathologie ;
-              :utiliseMedicament ?medicament ;
-              :posologie ?posologie .
+    ?patient a ont:Patient ;             # Sélectionne les patients
+             ont:nom ?nom ;              # Nom du patient
+             ont:prenom ?prenom ;        # Prénom du patient
+             ont:aPourDiagmostic ont:Diagnostique_COVID19 ;  # Filtre COVID-19
+             ont:dateActe ?dateDiagnostic .  # Date du diagnostic
 }
 
-### 5. Patients avec prescriptions en retard (date dépassée)
-SELECT ?patient ?nom ?traitement ?dateFin
+# -------------------------------------------------------------------
+# Requête 3 : Traitements prescrits par le Dr. Aymen
+# But : Connaître les traitements et leurs posologies prescrits par un médecin
+# Utilité : Gestion des prescriptions, vérification des protocoles
+# -------------------------------------------------------------------
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
+SELECT ?traitement ?nomTraitement ?frequence
 WHERE {
-  ?patient a :Patient ;
-           :nom ?nom ;
-           :aPourTraitement ?traitement .
-  ?traitement :dateFin ?dateFin .
-  FILTER (?dateFin < NOW())
+    ?traitement ont:esrPrescritPar ont:DrAymen ;  # Traitements prescrits par DrAymen
+                ont:Nom ?nomTraitement ;          # Nom du traitement
+                ont:frequence ?frequence .        # Posologie/fréquence
 }
 
-### 6. Statistiques par spécialité médicale (requête agrégative)
-SELECT ?specialite (COUNT(?medecin) AS ?nbMedecins) 
+# -------------------------------------------------------------------
+# Requête 4 : Établissements où travaille le Dr. Hicham
+# But : Identifier les lieux d'exercice d'un médecin
+# Utilité : Gestion des plannings, coordination des soins
+# -------------------------------------------------------------------
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
+SELECT ?etablissement ?nom ?adresse
 WHERE {
-  ?medecin a :Medecin ;
-           :aPourSpecialite ?specialite .
-  ?specialite rdfs:label ?specialite .
+    ont:DrHicham ont:TravailleDans ?etablissement .  # Établissements du DrHicham
+    ?etablissement ont:Nom ?nom ;                    # Nom de l'établissement
+                   ont:adresse ?adresse .            # Adresse physique
 }
-GROUP BY ?specialite
-ORDER BY DESC(?nbMedecins)
+
+# -------------------------------------------------------------------
+# Requête 5 : Examens médicaux et professionnels qui les réalisent
+# But : Associer les examens à leurs réalisateurs
+# Utilité : Suivi des actes médicaux, gestion du matériel
+# -------------------------------------------------------------------
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
+SELECT ?examen ?nomExamen ?professionnel ?nomProf ?prenomProf
+WHERE {
+    ?examen a ont:ExamenMedical ;        # Sélectionne les examens
+            ont:Nom ?nomExamen ;         # Nom de l'examen
+            ont:estRealisePar ?professionnel .  # Professionnel réalisateur
+    ?professionnel ont:nom ?nomProf ;    # Nom du professionnel
+                   ont:prenom ?prenomProf .  # Prénom du professionnel
+}
+
+# -------------------------------------------------------------------
+# Requête 6 : Relation médecin-patient
+# But : Visualiser les associations médecin/patient
+# Utilité : Gestion des dossiers patients, coordination des soins
+# -------------------------------------------------------------------
+PREFIX ont: <http://www.co-ode.org/ontologies/ont.owl#>
+SELECT ?medecin ?nomMedecin ?patient ?nomPatient
+WHERE {
+    ?medecin a ont:Medecin ;             # Sélectionne les médecins
+             ont:nom ?nomMedecin ;       # Nom du médecin
+             ont:aPourPatient ?patient . # Patients associés
+    ?patient ont:nom ?nomPatient .       # Nom des patients
+}
