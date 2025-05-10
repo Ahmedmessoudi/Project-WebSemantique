@@ -1,140 +1,149 @@
-# 🧠 Ontologie de la Santé - Mini Projet Sémantique
 
-## 📚 Description du Projet
+# 🏥 Ontologie de la Santé - Mini Projet Sémantique
 
-Ce mini projet a pour objectif de mettre en pratique les technologies du Web sémantique : **RDF**, **RDFS**, **OWL**, **SPARQL** et **SWRL**. Le domaine choisi est **la santé**, un domaine riche en concepts, idéal pour illustrer la puissance des ontologies. Le projet est réalisé avec l’outil **Protégé**, et les fichiers RDF/XML sont publiés sur GitHub.
+## 📘 Description Générale
 
-## 🎯 Objectifs pédagogiques
+Ce projet s'inscrit dans le cadre de l'exploration du Web sémantique, en utilisant les standards **RDF**, **RDFS**, **OWL**, **SPARQL** et **SWRL**. L’ontologie développée modélise des concepts liés au **domaine médical**, notamment la gestion des professionnels de santé, des patients, des services hospitaliers, des consultations et prescriptions. Elle offre des outils d’analyse basés sur des requêtes SPARQL et des inférences automatiques.
 
-À l’issue du projet, les objectifs suivants doivent être atteints :
+L’ontologie est développée avec **Protégé** et publiée sur GitHub
 
-- 📐 **Modélisation** : conception d’une ontologie en RDF, RDFS et OWL.
-- 🔎 **Requêtes** : interroger l’ontologie avec SPARQL.
-- 🧠 **Inférences** : enrichissement avec des règles SWRL.
-- 🗂️ **Documentation** : production d’une documentation claire et précise.
-- 💻 **Partage** : hébergement du projet sur GitHub et partage sur Moodle.
+## 🌐 Justification des Namespaces
 
----
+| Préfixe | URI |
+|--------|-----|
+| `xsd` | `http://www.w3.org/2001/XMLSchema#` |
+| `dc`  | `http://purl.org/dc/elements/1.1/` |
+| `foaf`| `http://xmlns.com/foaf/0.1/` |
+| `skos`| `http://www.w3.org/2004/02/skos/core#` |
+| `rdfs`| `http://www.w3.org/2000/01/rdf-schema#` |
+| `owl` | `http://www.w3.org/2002/07/owl#` |
 
-## 🏥 Domaine : Santé
+## 🧠 Modèle Conceptuel Utilisé
 
-Le domaine de la santé est choisi pour son importance sociétale et sa richesse sémantique. Il comprend :
+### 🔹 Classes Principales
 
-- 👨‍⚕️ **Médecins**
-- 👩‍⚕️ **Infirmiers**
-- 🧪 **Spécialités médicales**
-- 🏥 **Services hospitaliers**
-- 🩺 **Consultations**
-- 🧾 **Dossiers médicaux**
-- 💊 **Médicaments**
+- 👨‍⚕️ **Médecins** : `Medecin` (Type : owl:Class)
+- 👩‍⚕️ **Infirmiers** : `Infirmier` (Type : owl:Class)
+- 🧑‍🤝‍🧑 **Patients** : `Patient` (Type : owl:Class)
+- 🏥 **Services hospitaliers** : `Service` (Type : owl:Class)
+- 🧪 **Spécialités médicales** : `Specialite` (Type : owl:Class)
+- 🩺 **Consultations** : `Consultation` (Type : owl:Class)
+- 🧾 **Dossiers médicaux** : `DossierMedical` (Type : owl:Class)
+- 💊 **Médicaments** : `Medicament` (Type : owl:Class)
+- 🏨 **Hôpitaux** : `Hopital` (Type : owl:Class)
 
----
+### 🔸 Sous-classes et Hiérarchies
 
-## 🧩 Technologies et Standards Utilisés
+- `Medecin`, `Infirmier` ⊂ `PersonnelMedical` (Type : owl:Class)
+- `Consultation` liée à `Medecin` et `Patient` (via propriétés)
 
-| Nom | Namespace |
-|-----|-----------|
-| XML Schema | `http://www.w3.org/2001/XMLSchema#` |
-| Dublin Core | `http://purl.org/dc/elements/1.1/` |
-| FOAF | `http://xmlns.com/foaf/0.1/` |
-| SKOS | `http://www.w3.org/2004/02/skos/core#` |
-| RDFS | `http://www.w3.org/2000/01/rdf-schema#` |
-| OWL | `http://www.w3.org/2002/07/owl#` |
+### 🔗 Propriétés et Sous-Propriétés
 
----
-
-## 🧱 Architecture du Projet
-
-```plaintext
-📁 sante-ontologie/
-    ├──  ontology
-        ├── 📄 sante ontologie.rdf     → Ontologie en RDF
-        ├── 📄 sante ontologie.owl     → Ontologie enrichie en OWL
-    ├──   queries
-        ├── 📄 medica.sparql           → Requêtes SPARQL
-    ├──  docs
-        ├── 📄 rapport.pdf          → Rapport finale du project
-    ├── 📄 README.md               → Fichier de documentation
-```
-
----
-
-## 🏗️ Structure de l’Ontologie
-
-### 🏷️ Classes Principales
-
-- `Medecin`, `Infirmier`, `Patient`, `Service`, `Consultation`, `Specialite`, `Hopital`
-
-### 🔗 Propriétés
-
-- `aPourSpecialite`, `travailleDans`, `aConsulte`, `prescrit`, `aPourNom`, `aPourPrenom`, `aPourDateNaissance`, `aPourService`
-
-### 🧬 Sous-classes et sous-propriétés
-
-- Exemple : `Medecin` est une sous-classe de `PersonnelMedical`
-- Exemple : `aPourSpecialite` est une propriété définie pour `Medecin`
-
----
+| Propriété              | Domaine               | Type                |
+|------------------------|------------------------|---------------------|
+| `aPourNom`             | Personne               | `xsd:string`        |
+| `aPourPrenom`          | Personne               | `xsd:string`        |
+| `aPourDateNaissance`   | Personne               | `xsd:date`          |
+| `travailleDans`        | PersonnelMedical → Service | `owl:ObjectProperty` |
+| `aPourSpecialite`      | Medecin → Specialite   | `owl:ObjectProperty` |
+| `prescrit`             | Medecin → Medicament   | `owl:ObjectProperty` |
+| `aConsulte`            | Patient → Medecin      | `owl:ObjectProperty` |
+| `aPourService`         | Consultation → Service | `owl:ObjectProperty` |
 
 ## 🧪 Requêtes SPARQL
 
-Les requêtes sont définies dans le fichier [`medica.sparql`](./medica.sparql)
+Les requêtes définies dans [`medica.sparql`](./queries/medica.sparql) permettent de réaliser les opérations suivantes :
 
-### 🔍 Exemples de requêtes et leurs rôles
+| Objectif | Description |
+|---------|-------------|
+| 👨‍⚕️ Liste des médecins et leurs spécialités | Identifier les domaines d’expertise |
+| 😷 Patients diagnostiqués COVID-19 | Suivi des consultations par service |
+| 💊 Traitements prescrits par le Dr. Aymen |  Vérifier les traitements prescrits par un médecin spécifique. |
+| 🏨 Établissements du Dr. Hicham | Localiser les établissements dans lesquels exerce un médecin. |
+| 🧪 Examens médicaux et réalisateurs | Associer les actes médicaux aux professionnels responsables. |
+| 🧑‍🤝‍🧑 Relation médecin-patient | Visualiser les liens directs entre praticiens et patients. |
 
-1. **Liste des médecins avec leur spécialité**  
-   Permet de visualiser les médecins et leurs domaines d’expertise.
 
-2. **Patients ayant consulté un service donné**  
-   Identifie les patients associés à un service spécifique.
+## 🔍 Inférences dans l'Ontologie
 
-3. **Nombre total de consultations par service**  
-   Donne une idée de la charge de travail par service.
-
-4. **Médicaments prescrits par un médecin**  
-   Permet de tracer les prescriptions médicales.
-
----
+- 🧠 Tout médecin travaillant dans un service est implicite membre du personnel du service.
+- 📁 Lien implicite entre patient, dossier et service.
+- 🧬 Déductions via `rdfs:subClassOf`, `owl:equivalentClass`, etc.
 
 ## ⚙️ Règles SWRL
 
-Les règles SWRL enrichissent l’ontologie en permettant des inférences logiques. Exemples :
+### 1. 🧠 Règle pour les patients nécessitant un IRM
+```
+Patient(?p) ^ aPourDiagnostic(?p, Diagnostique_cerveau) -> estPrescritPar(ExamenIRM, DrMedAli)
+```
+- Automatise la prescription d'IRM pour les pathologies cérébrales
+- Identifie tout patient avec un diagnostic cérébral
+- Attribue l'examen IRM au Dr Med Ali (neurologue)
 
-- **Règle 1** : Si une personne est médecin et travaille dans un service, alors elle est affectée à ce service.
-- **Règle 2** : Si un patient consulte un médecin, alors ce médecin l’a consulté.
-- **Règle 3** : Un médecin qui a plus de 10 consultations dans un service est un médecin expérimenté.
-- **Règle 4** : Un patient ayant plus de 5 médicaments prescrits est un patient à surveiller.
+### 2. 🏥 Règle pour les médecins travaillant dans plusieurs établissements
+```
+Medecin(?m) ^ TravailleDans(?m, ?e1) ^ TravailleDans(?m, ?e2) ^ differentFrom(?e1, ?e2) -> Specialiste(?m)
+```
+- Détecte les médecins travaillant dans ≥2 établissements
+- Classe ces médecins comme "Spécialistes"
+- Utile pour la gestion des consultants externes
+
+### 3. 😷 Règle pour les patients avec COVID-19
+```
+Patient(?p) ^ aPourDiagnostic(?p, Diagnostique_COVID19) -> prescrit(DrAymen, Traitement_Paracetamol)
+```
+- Déclencheur : diagnostic COVID-19
+- Action : prescription automatique de paracétamol par Dr Aymen
+
+### 4. 📋 Règle pour lier les examens médicaux à leurs patients
+```
+ExamenMedical(?e) ^ estRealisePar(?e, ?prof) ^ ProfessionalDeSante(?prof) ^ aPourPatient(?med, ?p) ^ Medecin(?med) -> aPourDiagnostic(?p, ?e)
+```
+- Automatise l’enregistrement des examens en diagnostics
+- Valide le lien entre patient, examen, médecin et personnel
+
+### 5. 🧬 Règle pour détecter les médecins Neuro
+```
+Medecin(?m) ^ aPourSpecialite(?m, Pathologie_Neuro) -> ProfessionalDeSante(?m)
+```
+- Classe tout médecin neurologue comme professionnel de santé
+- Assure la hiérarchie des spécialités
+
+
+## 🧾 Architecture du Projet
+
+```
+📦 sante-ontologie/
+ ├── docs/
+ ├── ontology/
+ │   ├── sante ontologie.rdf
+ │   └── sante ontologie.owl
+ ├── queries/
+ │   └── medica.sparql
+     └── SWRL queries.txt
+ ├── schemas/
+ └── README.md
+```
+
+## ✅ Apports de l’Ontologie
+
+- 🧱 Structuration du domaine santé.
+- 🔄 Inférences automatiques utiles pour l’analyse.
+- 🔎 Interrogation précise via SPARQL.
+- 🌍 Base pour des systèmes intelligents d’aide à la décision.
+
+## 📤 Déploiement
+
+- 📅 Projet publié sur GitHub .
+- 🗃️ Fichiers RDF/OWL, SPARQL et doc partagés.
+
+## 📚 Ressources Utiles
+
+- 🛠️ [Protégé](https://protege.stanford.edu/)
+- 📘 [W3C OWL Guide](https://www.w3.org/TR/owl2-overview/)
+- 🔎 [Wikidata SPARQL Service](https://query.wikidata.org/)
+- 📄 [SWRL Rules Overview](https://www.w3.org/Submission/SWRL/)
 
 ---
 
-## 📌 Phases du Projet
-
-| Phase | Description |
-|-------|-------------|
-| 🧠 Phase 1 | Choix du domaine & concepts clés |
-| 🛠️ Phase 2 | Modélisation en RDF/RDFS |
-| 🔎 Phase 3 | Requêtes SPARQL |
-| 🧬 Phase 4 | Développement en OWL |
-| 🧠 Phase 5 | Définition de règles SWRL |
-
----
-
-## 📝 Conclusion
-
-Ce projet a permis de :
-
-- Appréhender les outils de modélisation sémantique (Protégé, RDF, OWL, SPARQL)
-- Structurer un domaine complexe (la santé)
-- Effectuer des inférences avancées grâce à SWRL
-- Mettre en place un projet collaboratif et documenté via GitHub
-
-🌐 Grâce aux technologies sémantiques, les données deviennent **interopérables**, **intelligentes** et **exploitables** pour l’avenir du Web des données.
-
----
-
-## 🚀 Ressources
-
-- 🔗 [Protégé Ontology Editor](https://protege.stanford.edu/)
-- 🔗 [Wikidata SPARQL Query Service](https://query.wikidata.org/)
-- 📖 [W3C RDF Primer](https://www.w3.org/TR/rdf-primer/)
-- 📖 [OWL 2 Overview](https://www.w3.org/TR/owl2-overview/)
+*🧬 Vers une médecine sémantique plus intelligente et connectée...*

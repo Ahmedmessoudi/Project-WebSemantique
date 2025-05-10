@@ -1,7 +1,7 @@
 # Règles SWRL pour l'Ontologie Médicale
 
 ### 1. Règle pour les patients nécessitant un IRM
-Patient(?p) ^ aPourDiagostic(?p, Diagnostique_cerveau) -> estPrescritPar(ExamenIRM, DrMedAli)
+Patient(?p) ^ aPourDiagnostic(?p, Diagnostique_cerveau) -> estPrescritPar(ExamenIRM, DrMedAli)
 # Fonctionnalité : Automatise la prescription d'IRM pour les pathologies cérébrales
 # - Détection : Identifie tout patient avec diagnostic cérébral
 # - Action : Attribue systématiquement l'examen au Dr Med Ali (neurologue)
@@ -28,9 +28,9 @@ ExamenMedical(?e) ^ estRealisePar(?e, ?prof) ^ ProfessionalDeSante(?prof) ^ aPou
 # - Validation : Requiert un médecin référent et un professionnel habilité
 # - Traçabilité : Garantit un lien clair entre examen → patient → médecin
 
-### 5. Règle pour détecter les médecins généralistes
-Medecin(?m) ^ aPourSpecialite(?m, Pathologie_generale) -> ProfessionalDeSante(?m)
-# Fonctionnalité : Classification des généralistes
-# - Critère : Spécialité en "Pathologie générale"
+### 5. Règle pour détecter les médecins Neuro
+Medecin(?m) ^ aPourSpecialite(?m, Pathologie_Neuro) -> ProfessionalDeSante(?m)
+# Fonctionnalité : Classification des Neuro medecins
+# - Critère : Spécialité en "Pathologie nerveuse"
 # - Action : Intègre automatiquement à la classe ProfessionalDeSante
 # - Cohérence : Aligne la hiérarchie des professions médicales
