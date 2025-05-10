@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-14#"
-     xml:base="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-14"
+<rdf:RDF xmlns="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-18#"
+     xml:base="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-18"
      xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -10,7 +10,7 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-14">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lenovo/ontologies/2025/4/untitled-ontology-18">
         <rdfs:comment xml:lang="fr">this ontology is about healthcare</rdfs:comment>
     </owl:Ontology>
     
@@ -92,6 +92,7 @@
     <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
         <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
         <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
         <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
@@ -135,10 +136,20 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
         <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
         <rdfs:label xml:lang="fr">prescrit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#utiliseMed -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#utiliseMed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
     </owl:ObjectProperty>
     
 
@@ -387,6 +398,7 @@
         <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
         <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
         <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
     </owl:Class>
     
 
@@ -444,6 +456,7 @@
     <!-- http://www.co-ode.org/ontologies/ont.owl#Specialiste -->
 
     <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Specialiste">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
         <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
         <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
     </owl:Class>
@@ -466,6 +479,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Amoxicilline -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Amoxicilline">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:NamedIndividual>
     
 
 
@@ -497,10 +518,6 @@
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
         <ont:Nom>Examen IRM</ont:Nom>
@@ -545,6 +562,7 @@ Mal de gorge
 Maux de tête
 
 Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
         <ont:frequence>Soif excessive (polydipsie)
 
 Mictions fréquentes (polyurie)
@@ -560,32 +578,7 @@ Vision floue
 Infections fréquentes (urinaires, peau)
 
 Cicatrisation lente</ont:frequence>
-        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_Grippe"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#ExamenIRM -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
     
 
 
@@ -595,9 +588,6 @@ Cicatrisation lente</ont:frequence>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
         <ont:Nom>Examen IRM</ont:Nom>
@@ -642,6 +632,7 @@ Mal de gorge
 Maux de tête
 
 Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
         <ont:frequence>Soif excessive (polydipsie)
 
 Mictions fréquentes (polyurie)
@@ -657,26 +648,7 @@ Vision floue
 Infections fréquentes (urinaires, peau)
 
 Cicatrisation lente</ont:frequence>
-        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_cerveau"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#ExamenIRM -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
     
 
 
@@ -686,8 +658,6 @@ Cicatrisation lente</ont:frequence>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
         <ont:Nom>Examen IRM</ont:Nom>
@@ -732,6 +702,7 @@ Mal de gorge
 Maux de tête
 
 Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
         <ont:frequence>Soif excessive (polydipsie)
 
 Mictions fréquentes (polyurie)
@@ -747,20 +718,7 @@ Vision floue
 Infections fréquentes (urinaires, peau)
 
 Cicatrisation lente</ont:frequence>
-        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Diagnostique_diabetique"/>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#ExamenIRM -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
     
 
 
@@ -770,7 +728,6 @@ Cicatrisation lente</ont:frequence>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ActeMedical"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Diagnostic"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenMedical"/>
-        <owl:sameAs rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM"/>
         <ont:Nom>Examen IRM</ont:Nom>
@@ -815,6 +772,7 @@ Mal de gorge
 Maux de tête
 
 Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
         <ont:frequence>Soif excessive (polydipsie)
 
 Mictions fréquentes (polyurie)
@@ -830,14 +788,15 @@ Vision floue
 Infections fréquentes (urinaires, peau)
 
 Cicatrisation lente</ont:frequence>
-        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#ExamenIRM -->
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Doliprane -->
 
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExamenIRM"/>
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Doliprane">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:NamedIndividual>
     
 
 
@@ -852,7 +811,6 @@ Cicatrisation lente</ont:frequence>
         <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
         <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient1"/>
         <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient5"/>
-        <ont:aPourSpecialite rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
         <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_AntiBiotique"/>
         <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol"/>
         <ont:codeCIM>M002</ont:codeCIM>
@@ -875,7 +833,6 @@ Cicatrisation lente</ont:frequence>
         <ont:TravailleDans rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hopital_IbnSina"/>
         <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient3"/>
         <ont:aPourPatient rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Patient7"/>
-        <ont:aPourSpecialite rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
         <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_AntiBiotique"/>
         <ont:prescrit rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement_Paracetamol"/>
         <ont:codeCIM>M003</ont:codeCIM>
@@ -983,6 +940,7 @@ Mal de gorge
 Maux de tête
 
 Congestion nasale</ont:frequence>
+        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
         <ont:frequence>Soif excessive (polydipsie)
 
 Mictions fréquentes (polyurie)
@@ -998,7 +956,6 @@ Vision floue
 Infections fréquentes (urinaires, peau)
 
 Cicatrisation lente</ont:frequence>
-        <ont:frequence>IRM (Imagerie par Résonance Magnétique) est un examen d’imagerie médicale très utilisé pour observer avec précision les tissus mous, le cerveau, la moelle épinière, les articulations, les organes internes, etc.</ont:frequence>
     </owl:NamedIndividual>
     
 
@@ -1017,7 +974,6 @@ Cicatrisation lente</ont:frequence>
     <!-- http://www.co-ode.org/ontologies/ont.owl#InfAnna -->
 
     <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#InfAnna">
-        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
         <ont:codeCIM>I002</ont:codeCIM>
@@ -1032,7 +988,6 @@ Cicatrisation lente</ont:frequence>
     <!-- http://www.co-ode.org/ontologies/ont.owl#InfLuc -->
 
     <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#InfLuc">
-        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Infirmier"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
         <ont:codeCIM>I001</ont:codeCIM>
@@ -1044,9 +999,18 @@ Cicatrisation lente</ont:frequence>
     
 
 
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Insuline -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Insuline">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medicament"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM -->
 
     <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Manipulateur_IRM">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Personne"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Specialiste"/>
@@ -1070,14 +1034,6 @@ Cicatrisation lente</ont:frequence>
     <!-- http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro -->
 
     <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro">
-        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale -->
-
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale">
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie"/>
     </owl:NamedIndividual>
     
@@ -1238,6 +1194,7 @@ Cicatrisation lente</ont:frequence>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrAymen"/>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrHicham"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
+        <ont:utiliseMed rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Amoxicilline"/>
         <ont:Nom>traitement antibiotique</ont:Nom>
         <ont:frequence>3 fois par jours pour 15 jours</ont:frequence>
     </owl:NamedIndividual>
@@ -1251,6 +1208,7 @@ Cicatrisation lente</ont:frequence>
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Traitement"/>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrKhadija"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <ont:utiliseMed rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Insuline"/>
         <ont:Nom>traitement diabetique</ont:Nom>
         <ont:frequence>des shots d&apos;insuline chaque jours jusqu&apos;a la visite prochaine</ont:frequence>
     </owl:NamedIndividual>
@@ -1267,6 +1225,7 @@ Cicatrisation lente</ont:frequence>
         <ont:esrPrescritPar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DrMedAli"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfAnna"/>
         <ont:estRealisePar rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InfLuc"/>
+        <ont:utiliseMed rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Doliprane"/>
         <ont:Nom>traitement paracetamol</ont:Nom>
         <ont:frequence>2 fois par jour pour 10 jours</ont:frequence>
     </owl:NamedIndividual>
@@ -1478,7 +1437,52 @@ Cicatrisation lente</ont:frequence>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
-                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_generale"/>
+                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Diabete"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ProfessionalDeSante"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>R6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medecin"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#aPourSpecialite"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#m"/>
+                                <swrl:argument2 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pathologie_Neuro"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
